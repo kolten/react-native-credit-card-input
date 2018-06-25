@@ -175,6 +175,9 @@ export default class LiteCreditCardInput extends Component {
           <CCInput {...this._inputProps("cvc")}
             keyboardType="numeric"
             containerStyle={s.cvcInput} />
+          <CCInput {...this._inputProps("cvc")}
+            keyboardType="numeric"
+            containerStyle={s.cvcInput} />
         </View>
       </View>
     );
