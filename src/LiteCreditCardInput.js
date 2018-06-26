@@ -63,6 +63,9 @@ const s = StyleSheet.create({
     height: 40,
     color: "black",
   },
+  zipInput: {
+    width: 80,
+  },
 });
 
 /* eslint react/prop-types: 0 */ // https://github.com/yannickcr/eslint-plugin-react/issues/106
@@ -86,6 +89,7 @@ export default class LiteCreditCardInput extends Component {
       number: "1234 5678 1234 5678",
       expiry: "MM/YY",
       cvc: "CVC",
+      postalCode: "zipcode"
     },
     validColor: "",
     invalidColor: "red",
@@ -139,7 +143,7 @@ export default class LiteCreditCardInput extends Component {
   }
 
   render() {
-    const { focused, values: { number }, inputStyle, status: { number: numberStatus } } = this.props;
+    const { focused, values: { number }, inputStyle, status: { number: numberStatus }, requiresPostalCode } = this.props;
     const showRightPart = focused && focused !== "number";
 
     return (
@@ -175,9 +179,10 @@ export default class LiteCreditCardInput extends Component {
           <CCInput {...this._inputProps("cvc")}
             keyboardType="numeric"
             containerStyle={s.cvcInput} />
-          <CCInput {...this._inputProps("postalCode")}
+          {requiresPostalCode && <CCInput {...this._inputProps("postalCode")}
             keyboardType="numeric"
-            />
+            containerStyle={s.zipInput}
+            />}
         </View>
       </View>
     );
