@@ -63,6 +63,9 @@ const s = StyleSheet.create({
     height: 40,
     color: "black",
   },
+  zipInput: {
+    width: 60,
+  },
 });
 
 /* eslint react/prop-types: 0 */ // https://github.com/yannickcr/eslint-plugin-react/issues/106
