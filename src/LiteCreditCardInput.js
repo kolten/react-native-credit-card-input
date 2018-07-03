@@ -89,7 +89,7 @@ export default class LiteCreditCardInput extends Component {
       number: "1234 5678 1234 5678",
       expiry: "MM/YY",
       cvc: "CVC",
-      postalCode: "zipcode"
+      postalCode: "ZIPCODE"
     },
     validColor: "",
     invalidColor: "red",
